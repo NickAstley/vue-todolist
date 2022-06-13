@@ -24,6 +24,10 @@
                             <i class="fa-solid fa-square-xmark col-1 clickable" @click="removeToDo(i)"></i>
                         </li>
                     </ul>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Aggiungi una voce all'elenco" v-model="toDoToAdd">
+                        <button class="btn btn-outline-light" type="button" @click="addToDo">Aggiungi</button>
+                      </div>
                 </div>
             </div>
         </div>

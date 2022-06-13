@@ -15,4 +15,5 @@ body {
 
 .clickable:hover {
     transform: scale(1.2);
+    color: red;
 }

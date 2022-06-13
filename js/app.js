@@ -49,11 +49,23 @@ const toDoList = [
 const appVue = new Vue({
     el : "#app",
     data : {
-        toDoList : toDoList
+        toDoList : toDoList,
+        toDoToAdd : ""
     },
     methods : {
         removeToDo(index) {
             this.toDoList.splice(index, 1);
+        },
+        addToDo() {
+            if (this.toDoToAdd.trim()) {
+                this.toDoList.push(
+                    {
+                        text : this.toDoToAdd,
+                        done : false
+                    }
+                );
+                this.toDoToAdd="";
+            }
         }
     }
 });
