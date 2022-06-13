@@ -46,25 +46,39 @@ const toDoList = [
     }
 ];
 
+// Avvio Vue
 const appVue = new Vue({
     el : "#app",
     data : {
+        // Metto nei data l'array
         toDoList : toDoList,
+        // Metto nei data una variabile stringa che controlla il valore dell'input che serve per aggiungere una voce all'array
         toDoToAdd : ""
     },
     methods : {
         removeToDo(index) {
+            // Rimuovo il toDo all'indice corrispondente a quello della X cliccata
             this.toDoList.splice(index, 1);
         },
         addToDo() {
             if (this.toDoToAdd.trim()) {
+                // Se il campo input non è vuoto(o comunque composto da soli spazi), pusho un nuovo oggetto nell'array
                 this.toDoList.push(
                     {
                         text : this.toDoToAdd,
                         done : false
                     }
                 );
+                // Resetto il campo input
                 this.toDoToAdd="";
+            }
+        },
+        completeToDo(index) {
+            // Inverto il valore di done al click su un toDo
+            if (!this.toDoList[index].done) {
+                this.toDoList[index].done = true;
+            } else if (this.toDoList[index].done) {
+                this.toDoList[index].done = false;
             }
         }
     }

@@ -18,14 +18,14 @@
                     <h1 class="border-bottom pb-3 fw-bold text-center">To Do</h1>
                     <ul class="list-unstyled">
                         <li v-for="(toDo, i) in toDoList" class="row">
-                            <span class="col" :class="toDo.done === true ? `text-decoration-line-through text-secondary` : `` ">
+                            <span class="col" :class="toDo.done === true ? `text-decoration-line-through text-secondary` : ``" @click="completeToDo(i)">
                                 {{toDo.text}}
                             </span>
                             <i class="fa-solid fa-square-xmark col-1 clickable" @click="removeToDo(i)"></i>
                         </li>
                     </ul>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Aggiungi una voce all'elenco" v-model="toDoToAdd">
+                        <input type="text" class="form-control" placeholder="Aggiungi una voce all'elenco" v-model="toDoToAdd" @keyup.enter="addToDo">
                         <button class="btn btn-outline-light" type="button" @click="addToDo">Aggiungi</button>
                       </div>
                 </div>
