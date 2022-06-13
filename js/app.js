@@ -24,6 +24,6 @@ const appVue = new Vue({
 
     },
     methods : {
-        
+
     }
 });

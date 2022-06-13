@@ -1,0 +1,9 @@
+body {
+    background-color: #202124;
+    color: white;
+    min-height: 100vh;
+}
+
+#app {
+    background-color: #FBBC04;
+}
