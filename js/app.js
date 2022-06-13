@@ -52,6 +52,8 @@ const appVue = new Vue({
         toDoList : toDoList
     },
     methods : {
-
+        removeToDo(index) {
+            this.toDoList.splice(index, 1);
+        }
     }
 });

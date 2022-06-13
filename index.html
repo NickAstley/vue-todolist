@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue To Do List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
@@ -13,11 +14,14 @@
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-6">
-                <div id="app" class="text-center rounded p-3">
-                    <h1 class="border-bottom pb-3">To Do</h1>
+                <div id="app" class="rounded p-3">
+                    <h1 class="border-bottom pb-3 fw-bold text-center">To Do</h1>
                     <ul class="list-unstyled">
-                        <li v-for="toDo in toDoList" :class="toDo.done === true ? `text-decoration-line-through` : `` ">
-                            {{toDo.text}}
+                        <li v-for="(toDo, i) in toDoList" class="row">
+                            <span class="col" :class="toDo.done === true ? `text-decoration-line-through text-secondary` : `` ">
+                                {{toDo.text}}
+                            </span>
+                            <i class="fa-solid fa-square-xmark col-1 clickable" @click="removeToDo(i)"></i>
                         </li>
                     </ul>
                 </div>
