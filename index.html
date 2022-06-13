@@ -14,7 +14,12 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-6">
                 <div id="app" class="text-center rounded p-3">
-                    <h1>To Do</h1>
+                    <h1 class="border-bottom pb-3">To Do</h1>
+                    <ul class="list-unstyled">
+                        <li v-for="toDo in toDoList" :class="toDo.done === true ? `text-decoration-line-through` : `` ">
+                            {{toDo.text}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

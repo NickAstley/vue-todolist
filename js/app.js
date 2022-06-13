@@ -18,10 +18,38 @@ BONUS:
 2 - cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
 
+/*
+Creo un array di oggetti. Ogni oggetto rappresenta un toDo e sarà formato da:
+- text che ne indica il testo;
+- done, che indica se è stato fatto o meno
+*/
+const toDoList = [
+    {
+        text : "Fare la spesa",
+        done: false
+    },
+    {
+        text : "Pulire la camera",
+        done: true
+    },
+    {
+        text : "Fare l'esercizio di Boolean",
+        done: false
+    },
+    {
+        text : "Dare da mangiare al gatto",
+        done: true
+    },
+    {
+        text : "Chiamare nonna",
+        done: false
+    }
+];
+
 const appVue = new Vue({
     el : "#app",
     data : {
-
+        toDoList : toDoList
     },
     methods : {
 
